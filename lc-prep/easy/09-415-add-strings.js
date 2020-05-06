@@ -33,8 +33,13 @@ var addStrings = function(num1, num2) {
             opr2 = resultArr[1];
         }
     }
-    return result;
-    
+    let leadingZerosLastIndex = -1;
+	for(let i=0;i<result.length;i++){
+		if(result.charAt(i) == 0){ leadingZerosLastIndex = i }
+		else { break }
+    }
+	return result.length > 1 ? result.substr(leadingZerosLastIndex+1) : result;
+
     function addStrings(str1, str2){
         let lastIndex = str1.length-1;
         let resultStr = "";
@@ -43,7 +48,7 @@ var addStrings = function(num1, num2) {
             const digit1 = Number.parseInt(str1.charAt(i));
             const digit2 = Number.parseInt(str2.charAt(i));
             resultStr =  ((digit1 + digit2)%10) + resultStr;
-            overflowStr = ((digit1 + digit2)/10) + overflowStr;
+            overflowStr = (Math.floor((digit1 + digit2)/10)) + overflowStr;
         }
         return [resultStr, overflowStr];
     }
