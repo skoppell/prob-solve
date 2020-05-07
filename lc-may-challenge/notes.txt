@@ -1,0 +1,35 @@
+1. First Bad version 
+    - 3 types of Bin Search
+    
+    - left = 0, right = lenght-1;
+    while(left<=right){
+        mid = Math.floor(left + (right-left/2));
+        if(satisfied) retrun mid;
+        if(target > mid) left = mid+1;
+        if(target < mid ) right = mid-1; 
+    }
+    return -1;
+
+    - left = 0, right = length;
+    while(left < right){
+        if(satisfied) return mid;
+        if(target > mid) left = mid+1;
+        if(target < mid) right = mid; 
+    }
+    if(left index satisfies) return left;  // left == right.
+    return -1;
+
+
+    - left=0;right=length;
+    while(left+1 < right){
+        if(satisfied) return mid;
+        if(target > mid) left = mid;
+        if(target < mid) right = mid;
+    }
+    if(left index satisfies) return left;
+    if(right index satisfies) return right;
+    return -1;
+
+6. Majority Elem. 
+    - Random index and then couting if the num at that index is majorith .. will give linear time. (thought theoritically it of order infinity)
+           
