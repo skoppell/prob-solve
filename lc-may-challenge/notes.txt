@@ -32,4 +32,13 @@
 
 6. Majority Elem. 
     - Random index and then couting if the num at that index is majorith .. will give linear time. (thought theoritically it of order infinity)
-           
+
+7. cousins in binary tree 
+    - brute force is to do DFS of two values and check
+    - improvement can be ..when doing above DFS, if one is found at level L1 .. then ... when doin DFS for next value any thing above L1 level is false. 
+    - but cuz this is more like searching at each leve, BFS is better.
+    - push a delimiter when parent node changes.
+
+8. lines in same line. 
+    - check if slope is same. (y2-y1)/(x2-x1).
+    - handel if x2-x1 == 0 case. (not required for js as it returns Infinity)
