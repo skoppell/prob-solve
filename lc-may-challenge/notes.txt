@@ -42,3 +42,7 @@
 8. lines in same line. 
     - check if slope is same. (y2-y1)/(x2-x1).
     - handel if x2-x1 == 0 case. (not required for js as it returns Infinity)
+
+10. if the prob is represented as graph, essentailly we are intrested in a node ..which has 0 outdegree and N-1 indegree.
+    so .. we can maintain two arrays .. and check for those. 
+    or maintain a single array .. to store the diff and finally check .. which index has a value of N-1  => (N-1) - (0).  (out minus in degree)
