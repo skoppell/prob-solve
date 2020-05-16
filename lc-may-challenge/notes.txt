@@ -46,3 +46,23 @@
 10. if the prob is represented as graph, essentailly we are intrested in a node ..which has 0 outdegree and N-1 indegree.
     so .. we can maintain two arrays .. and check for those. 
     or maintain a single array .. to store the diff and finally check .. which index has a value of N-1  => (N-1) - (0).  (out minus in degree)
+
+15. max-sum-sub-array can be calculated by Kandane alog. 
+    Kandane algo is done by DP.  bascially dp[j] = max(num[i], num[i]+dp[j-1]);
+    for space efficiency, we maintian only prev value and wirte the alog as 
+      currSum = A[0];
+      ans = A[0];
+      for(i=1:N-1){
+          currSum = max(currSum, A[i]+ currSum);
+          ans = max(ans, currSum);
+      }
+
+      but here the array is circular. so 2 possiblities.
+      1. normal case. 
+      2. special case, where some vals are from head of array and some are from tail. (leaving some in the middle). 
+
+      imp point to consider here is:  whaterver is left in the middle, will be minSum sub-array. So, total-minsubArry will hanlde case 2. 
+
+      finally ans is Max(case1 ans, case2 ans).  
+      one special case to handle is if all nums are negative. then cas1 ans will the max-num of array and cas2 ans will be zero. 
+      because we have to returm max-sum-subarry of non-empty sub array .. return case1 ans.
