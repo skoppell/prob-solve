@@ -3,8 +3,9 @@
 */
 
 function buildHeap(arr){
-
-    for(let i=n/2-1;i<=0;i--){
+	debugger;
+	const parentIndexOfLastLeaf = Math.floor(((arr.length)/2)-1);
+    for(let i=parentIndexOfLastLeaf;i>=0;i--){
         heapify(arr, i);
     }
     
@@ -14,18 +15,20 @@ function buildHeap(arr){
         const rightChildIndex = 2*index+2;
 
         if(arr[index] > arr[leftChildIndex] && arr[index] > arr[rightChildIndex]){
-            continue;
+            return;
         }
 
         if(arr[leftChildIndex] > arr[index] && arr[leftChildIndex] >= arr[rightChildIndex]){
             let temp = arr[index];
             arr[index] = arr[leftChildIndex];
             arr[leftChildIndex] = temp;
+            heapify(arr, leftChildIndex);
         }
         if(arr[rightChildIndex] > arr[index] && arr[rightChildIndex] >= arr[leftChildIndex]){
             let temp = arr[index];
             arr[index] = arr[rightChildIndex];
             arr[rightChildIndex] = temp;
+            heapify(arr, rightChildIndex);
         }
     }
     return arr;
