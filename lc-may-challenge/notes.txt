@@ -66,3 +66,17 @@
       finally ans is Max(case1 ans, case2 ans).  
       one special case to handle is if all nums are negative. then cas1 ans will the max-num of array and cas2 ans will be zero. 
       because we have to returm max-sum-subarry of non-empty sub array .. return case1 ans.
+
+17. find all anagram in a string. 
+    build cache map of target string. 
+    1) O(nxn) ->  two for loops on string "s" .. to check if a char can be start on an anagram 
+    2) O(n) -> sliding window.  create a new map ..and check if it equal to cache map of target string.  new char add to the new map, remove old chars from the new map.
+
+    standarnd technique to pattern searching in string. 
+
+    1) build cache of target. lets say we have N diff chars in T
+    2) left=0, right=0
+    3) move right and visit new char
+    4) move left to un-viist old char.
+
+    
